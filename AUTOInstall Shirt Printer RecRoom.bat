@@ -1,3 +1,5 @@
+Only download and run this file if you want an automatic setup
+
 @echo off
 setlocal
 
