@@ -6,8 +6,8 @@ setlocal
 REM Define variables
 set "PYTHON_URL=https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe"
 set "PYTHON_INSTALLER=python-installer.exe"
-set "SHIRT_PRINTER_REPO=https://github.com/RenePotocnik/RecRoom-Shirt-Printer.git"
-set "SHIRT_PRINTER_DIR=RecRoom-Shirt-Printer"
+set "SHIRT_PRINTER_REPO=https://github.com/Belldofers/Revised-RenePotocnik-s-shirt-printer.git"
+set "SHIRT_PRINTER_DIR=Revised-RenePotocnik-s-shirt-printer"
 set "REQUIREMENTS_FILE=D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\requirements.txt"
 
 REM Step 1: Download Python 3.11 installer
