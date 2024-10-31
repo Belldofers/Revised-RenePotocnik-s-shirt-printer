@@ -1,0 +1,11 @@
+#Downloading
+1. Execute the "PythonDownloader" batch file
+2. Execute the "import requirements" python file
+
+#Using
+1. Execute the "List_Create_importing" python file
+2. Type "no" if you have not previously encoded data or want to change the picture that is used
+3. Your choice for dithering
+4. Type "y" to start the print
+
+You can press Alt+S at any time to stop the importing script

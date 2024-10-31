@@ -1,0 +1,64 @@
+[2024-10-31 16:36:01,712] [D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\common.py.<module>:173] [ERROR] ERROR
+Traceback (most recent call last):
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 171, in <module>
+    main(from_file="y" in input("Use the encoded data in `image_data.txt`? [yes/no]\n > "))
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 140, in main
+    image, img_data = Encoding.main(list_size=64)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\Encoding.py", line 271, in main
+    img: Image = get_image()
+                 ^^^^^^^^^^^
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\Encoding.py", line 122, in get_image
+    if img.palette:
+       ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'palette'
+[2024-10-31 18:07:36,036] [D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\common.py.<module>:186] [ERROR] ERROR
+Traceback (most recent call last):
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 184, in <module>
+    main(from_file="y" in input("Use the encoded data in `image_data.txt`? [yes/no]\n > "))
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 177, in main
+    copy_to_recroom(img_data=img_data, delay=delay, last_successful_string=last_string)
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 55, in copy_to_recroom
+    keyboard.add_hotkey('alt+s', stop_program())
+                                 ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'stop_program' where it is not associated with a value
+[2024-10-31 18:07:40,724] [D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\common.py.<module>:186] [ERROR] ERROR
+Traceback (most recent call last):
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 184, in <module>
+    main(from_file="y" in input("Use the encoded data in `image_data.txt`? [yes/no]\n > "))
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 177, in main
+    copy_to_recroom(img_data=img_data, delay=delay, last_successful_string=last_string)
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 55, in copy_to_recroom
+    keyboard.add_hotkey('alt+s', stop_program())
+                                 ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'stop_program' where it is not associated with a value
+[2024-10-31 18:07:56,622] [D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\common.py.<module>:186] [ERROR] ERROR
+Traceback (most recent call last):
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 184, in <module>
+    main(from_file="y" in input("Use the encoded data in `image_data.txt`? [yes/no]\n > "))
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 177, in main
+    copy_to_recroom(img_data=img_data, delay=delay, last_successful_string=last_string)
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 55, in copy_to_recroom
+    keyboard.add_hotkey('alt+s', stop_program())
+                                 ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'stop_program' where it is not associated with a value
+[2024-10-31 18:08:30,988] [D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\common.py.<module>:186] [ERROR] ERROR
+Traceback (most recent call last):
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 184, in <module>
+    main(from_file="y" in input("Use the encoded data in `image_data.txt`? [yes/no]\n > "))
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 177, in main
+    copy_to_recroom(img_data=img_data, delay=delay, last_successful_string=last_string)
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 55, in copy_to_recroom
+    keyboard.add_hotkey('alt+s', stop_program())
+                                 ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'stop_program' where it is not associated with a value
+[2024-10-31 18:08:55,786] [D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\common.py.<module>:185] [ERROR] ERROR
+Traceback (most recent call last):
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 183, in <module>
+    main(from_file="y" in input("Use the encoded data in `image_data.txt`? [yes/no]\n > "))
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 176, in main
+    copy_to_recroom(img_data=img_data, delay=delay, last_successful_string=last_string)
+  File "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\List_Create_Importing.py", line 55, in copy_to_recroom
+    keyboard.add_hotkey('alt+s', stop_program())
+                                 ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'stop_program' where it is not associated with a value
