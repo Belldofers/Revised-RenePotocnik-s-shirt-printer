@@ -13,7 +13,7 @@ import tkinter
 from math import sqrt
 from pathlib import Path
 from tkinter import filedialog
-from typing import Tuple, List
+from typing import Optional, Tuple, List
 
 try:
     import pyautogui
@@ -26,9 +26,8 @@ except ModuleNotFoundError:
     if input("Proceed to run the command automatically? [yes/no] ").find("yes") != -1:
         subprocess.call(f"{sys.executable} -m pip install -U PyAutoGUI pyperclip Pillow")
     exit()
-
 MaxStringLength: int = 512  # Maximum length string
-
+convertedimage: Optional[Image.Image] = None
 # Typing alias for color
 PixelColor = Tuple[int, int, int]
 
@@ -101,6 +100,7 @@ ALL_COLORS = [num for tup in RR_PALETTE.keys() for num in tup]
 
 
 def get_image(check_palette: bool = True) -> Image:
+    global img
     """
     Open file explorer, wait for user to open a PNG image
     :return: The image
@@ -166,25 +166,30 @@ def progress_update(y: int, img: Image, prefix='Progress', suffix='', length=50)
         print(" " * (length + 30), end="\r")
 
 
-def quantize(img, ask_for_dither: bool = True, dither: int = 0, open_image: bool = True) -> Image:
+def quantize(img, ditherdo, ask_for_dither: bool = False,  open_image: bool = True) -> Image:
+    global setpicture
+    new_image = None
     img = img.convert("RGB")
-
-    if ask_for_dither:
-        dither = 0 if "n" in input("Dither the image? [y/n] ").lower() else 1
+    global convertedimage
+    
+    dither = 1 if ditherdo else 0
 
     palette_image = Image.new("P", img.size)
     palette_image.putpalette(ALL_COLORS)
     new_image = img.quantize(palette=palette_image,
-                             dither=dither).convert("RGB")
+                             dither=ditherdo).convert("RGB")
 
-    if open_image:
-        print("Opening the final image...")
-        new_image.show()
+    if setpicture: 
+        convertedimage = new_image
+        setpicture = False
 
     return new_image
 
 
-def encode(img: Image, vertical_print: bool = False, dither_: bool = True) -> list[str] or None:
+def encode(dither_: bool, img: Image, vertical_print: bool = False) -> list[str] or None:
+    global convertedimage
+    global setpicture
+    setpicture = True
     """
     Take an image and encode it into a list of {`MaxStringLength`}-char strings.
     ...[number of pixels][color]...
@@ -197,17 +202,19 @@ def encode(img: Image, vertical_print: bool = False, dither_: bool = True) -> li
     pixel_color: List[str] = []
     full_image = Image.new("RGB", img.size)
     dither = False
-
     # Just so pycharm doesn't complain
     x, y = 0, 0
-
+    
     if dither_:
-        img = quantize(img)
-
+        imgb = quantize(img, ditherdo=int(1))
+    else: imgb = img.convert("RGB")
+    print(imgb.height)
+    print(imgb.width)
     # `vertical_print` just changes the orientation of the encoding process.
-    for y in range(img.height):
-        for x in range(img.width):
-            p = img.getpixel((y, x) if vertical_print else (x, y))  # Gets the color of the pixel at `x, y`
+    for y in range(imgb.height):
+        for x in range(imgb.width):
+            p = imgb.getpixel((y, x) if vertical_print else (x, y))  # Gets the color of the pixel at `x, y`
+            
             if len(p) == 4:  # If the value is RGBA, the last `int` is removed
                 p = p[:3]
             try:
@@ -223,9 +230,10 @@ def encode(img: Image, vertical_print: bool = False, dither_: bool = True) -> li
         # Print the progress
         progress_update(y + 1, img, "Encoding")
 
-    if dither and dither_:
-        full_image.show()
-
+    #if dither and dither_:
+    if setpicture: 
+        convertedimage = full_image
+        setpicture = False
     colors: List[Tuple[int, str]] = []
     count: int = 0
     current_color: str = pixel_color[0]
@@ -253,11 +261,37 @@ def encode(img: Image, vertical_print: bool = False, dither_: bool = True) -> li
             img_data.append(s)
             s = ""
         s += ns
-
     img_data.append(s)
+    
     return img_data
 
-
+def main_from_image(havedither: bool, img: Image.Image, list_size: int = 64) -> list[str]:
+    global convertedimage
+    convertedimage = None
+    """
+    Main function for image encoding. Processes the image and returns encoded strings.
+    
+    :param img: The PIL image to process
+    :param list_size: Maximum list size for encoding
+    :return: A list of encoded image strings
+    """
+    if not img:
+        exit("No image selected or unable to open image.")
+    
+    img_data = encode(dither_=havedither, img=img)
+    # Save to file
+    with open("image_data.txt", "w", encoding="UTF-8") as strings_file:
+        strings_file.writelines("\n".join(img_data))
+    
+    # Display information
+    print(f"\nGenerated {len(img_data) + 2} strings for image WxH {img.width}x{img.height}")
+    print(f"Space needed: {len(img_data) // list_size} Lists (+ {len(img_data) % list_size})")
+    
+    return img_data
+def getconverted():
+    global convertedimage
+    print(f"\n{convertedimage}\n")
+    return convertedimage
 def main(list_size: int, output_strings: bool = False, wait_for_input: bool = False):
     """
     Function to tie together all others.
