@@ -5,3 +5,5 @@ I have simply made it easier to use and changed a few other things about how it 
 
 
 Download only the autoinstall if you want it to automatically download python 3.11 and import the necessary requirements
+
+check GUIDE.txt for instructions
