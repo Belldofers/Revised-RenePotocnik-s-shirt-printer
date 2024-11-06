@@ -26,14 +26,6 @@ REM Step 4: Clone RecRoom Shirt Printer repository
 echo Cloning RecRoom Shirt Printer repository...
 git clone %SHIRT_PRINTER_REPO%
 
-REM Step 5: Install required packages
-echo Installing required packages...
-pip install -r "%REQUIREMENTS_FILE%"
-
-REM Step 6: Run the Python script to import requirements
-echo Running the Python script to import requirements...
-python "D:\CustomizationAndCreationPrograms\Applicaitons\RecRoom-Shirt-Printer-main\RecRoom-Shirt-Printer-main\import requirements.py"
-
 echo Setup completed successfully.
 pause
 endlocal
