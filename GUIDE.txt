@@ -1,12 +1,17 @@
 #Downloading
 1. Execute the "PythonDownloader" batch file
-2. Execute the "import requirements" python file
+2. [IMPORTANT] Execute the "import requirements" python file
 
-#Using
+#Using Rene Potocniks
 1. Execute the "List_Create_importing" python file
 2. Type "no" if you have not previously encoded data or want to change the picture that is used
 3. Your choice for dithering
 4. Type "y" to start the print
-  Alternatively, you can use the Print Window
 
-You can press Alt+S at any time to stop the importing script
+#Using This Version
+1. Execute the Printing Window python file
+2. Press Choose Image and choose an image
+3. (Optional) Choose if you want flex or dither
+4. Press Convert Image and wait until it is finished
+5. (optional) choose a delay time
+6. Press Start Program
