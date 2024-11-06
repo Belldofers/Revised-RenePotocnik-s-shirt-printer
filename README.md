@@ -4,6 +4,6 @@ https://github.com/RenePotocnik/RecRoom-Shirt-Printer?tab=readme-ov-file#getting
 I have simply made it easier to use and changed a few other things about how it acts
 
 
-Download only the autoinstall if you want it to automatically download python 3.11 and import the necessary requirements
+Download only the "AUTOInstall Shirt Printer RecRoom.bat" file if you want it to automatically download python 3.11
 
 check GUIDE.txt for instructions
