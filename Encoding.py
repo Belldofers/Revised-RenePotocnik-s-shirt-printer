@@ -201,6 +201,7 @@ def encode(dither_: bool, img: Image, vertical_print: bool = False) -> list[str]
     """
     pixel_color: List[str] = []
     full_image = Image.new("RGB", img.size)
+    print(f"Image size:{img.size}")
     dither = False
     # Just so pycharm doesn't complain
     x, y = 0, 0
